@@ -20,7 +20,8 @@ RUN apt-get update \
     && apt-get install -y \
         docker-ce \
         docker-ce-cli \
-        containerd.io
+        containerd.io \
+    && usermod -aG docker jenkins
 
 # Install Ansible
 RUN echo "deb http://ppa.launchpad.net/ansible/ansible/ubuntu trusty main" >> /etc/apt/sources.list \
